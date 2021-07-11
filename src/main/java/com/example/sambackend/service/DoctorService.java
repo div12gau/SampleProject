@@ -23,7 +23,7 @@ public class DoctorService implements UserDetailsService {
         Doctor doctor = docRepo.findByUsername(username);
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodePassword = passwordEncoder.encode(doctor.getPassword());
-        return new org.springframework.security.core.userdetails.User(doctor.getUsername(),doctor.getPassword(),new ArrayList<>());
+        return new org.springframework.security.core.userdetails.User(doctor.getUsername(), doctor.getPassword(), new ArrayList<>());
     }
 
 
